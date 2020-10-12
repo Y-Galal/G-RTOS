@@ -3,9 +3,13 @@
 
 
 #define SYSPRI3         (*((volatile uint32_t *)0xE000ED20))
-#define SYSTICK_CTRL    (*((volatile uint32_t *)(0xE000E000 + 0x010)))
-#define SYSTICK_VAL     (*((volatile uint32_t *)(0xE000E000 + 0x018)))
-#define SYSTICK_LOAD    (*((volatile uint32_t *)(0xE000E000 + 0x014)))
+#define STCTRL    (*((volatile uint32_t *)(0xE000E000 + 0x010)))
+#define STCURRENT     (*((volatile uint32_t *)(0xE000E000 + 0x018)))
+#define STRELOAD    (*((volatile uint32_t *)(0xE000E000 + 0x014)))
+
+      
+
+
 
 #define INTEN 1
 #define ENABLE 0
