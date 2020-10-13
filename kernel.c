@@ -63,7 +63,7 @@ uint8_t TaskCreate( void(*task)(), uint8_t priority  , uint32_t *TaskHandle  )
     TCB[i].status = READY;
     *TaskHandle = (uint32_t)&TCB[i];
     i++;
-    if(i==3)
+    if(i==NUM_OF_TASKS)
     {
         CreateIdleTask();
     }
