@@ -13,9 +13,9 @@ uint8_t TaskCreate( void(*task)(), uint8_t priority , uint32_t *TaskHandle  );
 
 void TaskDelay(uint32_t TaskHandle,uint32_t delayInTicks);
 
-void TaskBlock(uint32_t *TaskHandle);
+void TaskBlock(uint32_t TaskHandle);
 
-void TaskResume(uint32_t *TaskHandle);
+void TaskResume(uint32_t TaskHandle);
 
 
 

@@ -72,20 +72,24 @@ uint8_t TaskCreate( void(*task)(), uint8_t priority  , uint32_t *TaskHandle  )
 
 void TaskDelay(uint32_t TaskHandle ,uint32_t delayInTicks)
 {
+    if(delayInTicks == 0)
+    {
+        return;
+    }
     TCB_Type *TaskToDelay = (TCB_Type*)TaskHandle;
     TaskToDelay->delayTime = tick + (delayInTicks/MS_TO_TICKS(TICK_RATE_MS));
     TaskToDelay->status = DELAYED;
     RequestContextSwitch();
 }
 
-void TaskBlock(uint32_t *TaskHandle)
+void TaskBlock(uint32_t TaskHandle)
 {
-    TCB_Type *TaskToBlock = (TCB_Type*)&TaskHandle;
+    TCB_Type *TaskToBlock = (TCB_Type*)TaskHandle;
     TaskToBlock->status = BLOCKED;
     RequestContextSwitch();
 }
 
-void TaskResume(uint32_t *TaskHandle)
+void TaskResume(uint32_t TaskHandle)
 {
     TCB_Type *TaskToBlock = (TCB_Type*)TaskHandle;
     TaskToBlock->status = READY;
