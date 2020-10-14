@@ -1,3 +1,8 @@
+/**
+ * File Name: queues.h
+ * Description: A header file that contains the function delarations for the queues
+ * 
+ * */
 #ifndef QUEUES_H
 #define QUEUES_H
 #include <stdint.h>

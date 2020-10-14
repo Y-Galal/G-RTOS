@@ -1,3 +1,8 @@
+/**
+ * File Name: RTO_Config.h
+ * Description: A header file that contains important definitions for the system
+ * 
+ * */
 #ifndef RTOS_CONFIG_H
 #define RTOS_CONFIG_H
 

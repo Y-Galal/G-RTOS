@@ -1,3 +1,9 @@
+/**
+ * File Name: kernel.c
+ * Description: A header file that contains kernel functions declartions
+ * 
+ * */
+
 #ifndef KERNEL_H
 #define KERNEL_H
 #include "systick_registers.h"

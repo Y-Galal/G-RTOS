@@ -1,3 +1,8 @@
+/**
+ * File Name: semaphores.h
+ * Description: A header file that contains the functions declaration
+ * 
+ * */
 #ifndef SEMAPHORE_H
 #define SEMAPHORE_H
 #include <stdint.h>
