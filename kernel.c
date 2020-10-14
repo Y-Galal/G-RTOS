@@ -5,7 +5,7 @@
 
 /*Static functions prototypes*/
 static void StackInit(uint8_t i);
-static void CreateIdleTask();
+static void CreateIdleTask(uint8_t idleTask);
 static void RequestContextSwitch();
 extern void  osSchedulerLaunch();
 void ContextSwitch();
@@ -65,7 +65,7 @@ uint8_t TaskCreate( void(*task)(), uint8_t priority  , uint32_t *TaskHandle  )
     i++;
     if(i==NUM_OF_TASKS)
     {
-        CreateIdleTask();
+        CreateIdleTask(i);
     }
     return 1;
 }
@@ -109,12 +109,12 @@ void IdleTask()
     }
 }
 
-static void CreateIdleTask()
+static void CreateIdleTask(uint8_t idleTask)
 {
-    StackInit(3);                                       /*Stack initialization*/
-    TCB_STACK[3][STACK_SIZE-2] = (int32_t)(IdleTask);   /*Adding the thread function*/
-    TCB[3].priority=0;
-    TCB[3].status =READY;
+    StackInit(idleTask);                                       /*Stack initialization*/
+    TCB_STACK[idleTask][STACK_SIZE-2] = (int32_t)(IdleTask);   /*Adding the thread function*/
+    TCB[idleTask].priority=0;
+    TCB[idleTask].status =READY;
 }
 
 static void RequestContextSwitch()
