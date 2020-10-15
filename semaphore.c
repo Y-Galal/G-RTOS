@@ -25,6 +25,10 @@ void SemaphoreTake(int32_t *semaphoreHandle,uint32_t TaskHandle, uint32_t delayI
 {
     while(*semaphoreHandle <= 0 )
     {
+        if (delayInTicks == 0)
+        {
+            return;
+        }
         TaskDelay(TaskHandle,delayInTicks);
     }
     *semaphoreHandle = *semaphoreHandle -1;
