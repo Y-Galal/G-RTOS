@@ -1,6 +1,6 @@
 /**
  * File Name: queues.h
- * Description: A header file that contains the function delarations for the queues
+ * Description: A header file that contains the function declarations  for the queues
  * 
  * */
 #ifndef QUEUES_H

@@ -1,6 +1,6 @@
 /**
- * File Name: kernel.c
- * Description: A header file that contains kernel functions declartions
+ * File Name: kernel.h
+ * Description: A header file that contains kernel functions declarations
  * 
  * */
 
