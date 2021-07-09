@@ -4,5 +4,5 @@ It's based on a fixed priority pre-emptive scheduler with time slicing. Also thi
 
 ## Specifications of the OS:
 1- Fixed priorities with a fixed number of tasks.<br/>
-2- Semaphores.<br/>
+2- Semaphores .<br/>
 3- Queues for inter-thread communication.<br/>
